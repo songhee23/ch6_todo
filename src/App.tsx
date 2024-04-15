@@ -13,7 +13,7 @@ const Container = styled.div`
   background-color: #eeeeee;
 `;
 
-const TodoItem = styled.div`
+const ToDoItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,10 +30,10 @@ function App() {
   return (
     <Container>
       <Title label="할 일 목록" />
-      <TodoItem>
+      <ToDoItem>
         <Label>리액트 공부하기</Label>
         <Button label="삭제"/>
-      </TodoItem>
+      </ToDoItem>
     </Container>
   )
 }
