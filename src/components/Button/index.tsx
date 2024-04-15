@@ -25,5 +25,5 @@ interface Props {
 
 export const Button = ({ label, onClick }: Props) => {
     return <Container onClick={onClick}>{label}</Container>;
-  };
+};
   

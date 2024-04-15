@@ -13,11 +13,27 @@ const Container = styled.div`
   background-color: #eeeeee;
 `;
 
+const TodoItem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+`;
+
+const Label = styled.div`
+  flex: 1;
+  font-size: 1.2rem;
+  margin-right: 16px;
+`;
+
 function App() {
   return (
     <Container>
       <Title label="할 일 목록" />
-      <Button label="삭제"/>
+      <TodoItem>
+        <Label>리액트 공부하기</Label>
+        <Button label="삭제"/>
+      </TodoItem>
     </Container>
   )
 }
