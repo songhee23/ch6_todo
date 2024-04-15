@@ -18,9 +18,12 @@ const Container = styled.button`
   }
 `;
 
-export const Button = () => {
-    return (
-        <Container onClick={() => console.log('test')}>삭제</Container>
-    );
+interface Props {
+    readonly label: string;
+    readonly  onClick?: () => void;
+}
+
+export const Button = ({ label, onClick }: Props) => {
+    return <Container onClick={onClick}>{label}</Container>;
   };
   
