@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import styled from '@emotion/styled'
 import { Title } from 'components/Title';
-import { ToDoList } from 'components/ToDoList';
+import { DataView } from 'components/DataView';
 import { useState } from 'react';
  
 const Container = styled.div`
@@ -12,16 +12,6 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #eeeeee;
-`;
-
-const DataView = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff;
-  padding: 32px;
-  border-radius: 8px;
 `;
 
 
@@ -38,10 +28,7 @@ function App() {
 
   return (
     <Container>
-      <DataView>
-        <Title label="할 일 목록" />
-        <ToDoList toDoList={toDoList} onDelete={onDelete}/>
-      </DataView>
+      <DataView toDoList={toDoList} onDelete={onDelete} />
     </Container>
   )
 }
