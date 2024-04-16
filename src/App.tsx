@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { DataView } from 'components/DataView';
 import { useState } from 'react';
 import { ToDoInput } from 'components/ToDoInput';
-
+import { ShowInputButton } from 'components/ShowInputButton';
 
  
 const Container = styled.div`
@@ -23,18 +23,25 @@ function App() {
     '책읽기'
   ]);
 
+  const [showToDoInput, setShowToDoInput] = useState(false);
+
   const onDelete = (toDo: string) => {
     setToDoList(toDoList.filter((item) => item !== toDo));
   };
 
   const onAdd = (toDo : string) => {
-    setToDoList([...toDoList, toDo])
+    setToDoList([...toDoList, toDo]);
+    setShowToDoInput(false);
   }
 
   return (
     <Container>
       <DataView toDoList={toDoList} onDelete={onDelete} />
-      <ToDoInput onAdd={onAdd} />
+      {showToDoInput && <ToDoInput onAdd={onAdd} />}
+      <ShowInputButton
+        show={showToDoInput}
+        onClick={()=> setShowToDoInput(!showToDoInput)}
+      />
     </Container>
   )
 }
