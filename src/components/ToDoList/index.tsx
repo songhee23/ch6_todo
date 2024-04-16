@@ -6,12 +6,23 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-export const ToDoList = () => {
+interface Props {
+    readonly toDoList : ReadonlyArray<string>;
+    readonly onDelete?: (todo : string) => void;
+}
+
+export const ToDoList = ({toDoList, onDelete}: Props) => {
     return (
         <Container>
-            <ToDoItem label='리액트 공부하기'/>
-            <ToDoItem label='운동하기'/>
-            <ToDoItem label='책 읽기'/>
+            {toDoList.map((todo) => (
+                <ToDoItem
+                    key={todo}
+                    label={todo}
+                    onDelete={() => {
+                        if (typeof onDelete === 'function') onDelete(todo);
+                    }}
+                />
+            ))}
         </Container>
     )
 }

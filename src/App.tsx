@@ -17,7 +17,7 @@ function App() {
   return (
     <Container>
       <Title label="할 일 목록" />
-      <ToDoList />
+      <ToDoList toDoList={['리액트 공부하기', '운동하기', '책읽기']}/>
     </Container>
   )
 }
