@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import styled from '@emotion/styled'
-import { Title } from 'components/Title';
 import { DataView } from 'components/DataView';
 import { useState } from 'react';
+import { TextInput } from 'components/TextInput';
+
  
 const Container = styled.div`
   height: 100vh;
@@ -14,13 +15,13 @@ const Container = styled.div`
   background-color: #eeeeee;
 `;
 
-
 function App() {
   const [toDoList, setToDoList] = useState([
     '리액트 공부하기',
     '운동하기',
     '책읽기'
   ]);
+  const [toDo, setToDo] = useState('')
 
   const onDelete = (todo: string) => {
     setToDoList(toDoList.filter((item) => item !== todo));
@@ -29,6 +30,7 @@ function App() {
   return (
     <Container>
       <DataView toDoList={toDoList} onDelete={onDelete} />
+      <TextInput />
     </Container>
   )
 }
