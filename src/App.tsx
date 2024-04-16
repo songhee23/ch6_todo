@@ -4,7 +4,8 @@ import styled from '@emotion/styled'
 import { DataView } from 'components/DataView';
 import { useState } from 'react';
 import { ToDoInput } from 'components/ToDoInput';
-import { ShowInputButton } from 'components/ShowInputButton';
+import { InputContainer } from 'components/InputContainer';
+
 
  
 const Container = styled.div`
@@ -25,23 +26,18 @@ function App() {
 
   const [showToDoInput, setShowToDoInput] = useState(false);
 
-  const onDelete = (toDo: string) => {
-    setToDoList(toDoList.filter((item) => item !== toDo));
+  const onDelete = (todo: string) => {
+    setToDoList(toDoList.filter((item) => item !== todo));
   };
 
   const onAdd = (toDo : string) => {
     setToDoList([...toDoList, toDo]);
-    setShowToDoInput(false);
   }
 
   return (
     <Container>
       <DataView toDoList={toDoList} onDelete={onDelete} />
-      {showToDoInput && <ToDoInput onAdd={onAdd} />}
-      <ShowInputButton
-        show={showToDoInput}
-        onClick={()=> setShowToDoInput(!showToDoInput)}
-      />
+      <InputContainer onAdd={onAdd}/>
     </Container>
   )
 }
