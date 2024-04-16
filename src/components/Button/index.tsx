@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 interface ContainerProps {
-    readonly color: string;
+  readonly color: string;
 }
 
 const Container = styled.button<ContainerProps>`
@@ -23,16 +23,15 @@ const Container = styled.button<ContainerProps>`
 `;
 
 interface Props {
-    readonly label: string;
-    readonly color?: string;
-    readonly  onClick?: () => void;
+  readonly label: string;
+  readonly color?: string;
+  readonly onClick?: () => void;
 }
 
 export const Button = ({ label, color = '#ff5722', onClick }: Props) => {
-    return (
-        <Container color={color} onClick={onClick}>
-            {label}
-        </Container>
-    )
+  return (
+    <Container color={color} onClick={onClick}>
+      {label}
+    </Container>
+  );
 };
-  

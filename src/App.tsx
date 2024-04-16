@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 import { DataView } from 'components/DataView';
 import { InputContainer } from 'components/InputContainer';
 import { ToDoListContextProvider } from 'context/ToDoList';
- 
+
 const Container = styled.div`
   height: 100vh;
   display: flex;
@@ -15,15 +15,14 @@ const Container = styled.div`
 `;
 
 function App() {
-
   return (
     <Container>
       <ToDoListContextProvider>
-        <DataView  />
+        <DataView />
         <InputContainer />
       </ToDoListContextProvider>
     </Container>
-  )
+  );
 }
 
 export default App;

@@ -13,10 +13,10 @@ const Container = styled.div`
 `;
 
 export const DataView = () => {
-    return (
-        <Container>
-            <Title label="할 일 목록" />
-            <ToDoList />
-      </Container>
-    )
-}
+  return (
+    <Container>
+      <Title label="할 일 목록" />
+      <ToDoList />
+    </Container>
+  );
+};

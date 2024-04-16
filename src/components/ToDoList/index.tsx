@@ -9,24 +9,24 @@ const Container = styled.div`
 `;
 
 interface Props {
-    readonly toDoList : ReadonlyArray<string>;
-    readonly onDelete?: (todo : string) => void;
+  readonly toDoList: ReadonlyArray<string>;
+  readonly onDelete?: (todo: string) => void;
 }
 
 export const ToDoList = () => {
-    const { toDoList, onDelete } = useContext(ToDoListContext);
+  const { toDoList, onDelete } = useContext(ToDoListContext);
 
-    return (
-        <Container>
-            {toDoList.map((todo) => (
-                <ToDoItem
-                    key={todo}
-                    label={todo}
-                    onDelete={() => {
-                        if (typeof onDelete === 'function') onDelete(todo);
-                    }}
-                />
-            ))}
-        </Container>
-    )
-}
+  return (
+    <Container>
+      {toDoList.map((todo) => (
+        <ToDoItem
+          key={todo}
+          label={todo}
+          onDelete={() => {
+            if (typeof onDelete === 'function') onDelete(todo);
+          }}
+        />
+      ))}
+    </Container>
+  );
+};

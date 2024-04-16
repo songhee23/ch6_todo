@@ -15,15 +15,15 @@ const Label = styled.div`
 `;
 
 interface Props {
-    readonly label:string;
-    readonly onDelete?: () => void;
+  readonly label: string;
+  readonly onDelete?: () => void;
 }
 
-export const ToDoItem = ({label, onDelete}: Props) => {
-    return (
-        <Container>
-        <Label>{label}</Label>
-        <Button label="삭제" onClick={onDelete}/>
-      </Container>
-    );
+export const ToDoItem = ({ label, onDelete }: Props) => {
+  return (
+    <Container>
+      <Label>{label}</Label>
+      <Button label="삭제" onClick={onDelete} />
+    </Container>
+  );
 };

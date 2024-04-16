@@ -10,8 +10,8 @@ const Label = styled.h1`
   margin-top: 0;
 `;
 
-interface Props{
-    readonly label: string;
+interface Props {
+  readonly label: string;
 }
 
 export const Title = ({ label }: Props) => {
