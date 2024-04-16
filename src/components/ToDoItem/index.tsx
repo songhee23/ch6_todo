@@ -14,11 +14,16 @@ const Label = styled.div`
   margin-right: 16px;
 `;
 
-export const ToDoItem = () => {
+interface Props {
+    readonly label:string;
+    readonly onDelete?: () => void;
+}
+
+export const ToDoItem = ({label, onDelete}: Props) => {
     return (
         <Container>
-        <Label>리액트 공부하기</Label>
-        <Button label="삭제"/>
+        <Label>{label}</Label>
+        <Button label="삭제" onClick={onDelete}/>
       </Container>
     );
 };

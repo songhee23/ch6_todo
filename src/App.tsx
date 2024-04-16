@@ -14,12 +14,11 @@ const Container = styled.div`
 `;
 
 
-
 function App() {
   return (
     <Container>
       <Title label="할 일 목록" />
-      <ToDoItem />
+      <ToDoItem label='리액트 공부하기'/>
     </Container>
   )
 }
