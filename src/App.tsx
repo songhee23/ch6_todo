@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import { DataView } from 'components/DataView';
 import { useState } from 'react';
 import { TextInput } from 'components/TextInput';
+import { Button } from 'components/Button'
 
  
 const Container = styled.div`
@@ -21,6 +22,7 @@ function App() {
     '운동하기',
     '책읽기'
   ]);
+
   const [toDo, setToDo] = useState('')
 
   const onDelete = (todo: string) => {
@@ -30,7 +32,8 @@ function App() {
   return (
     <Container>
       <DataView toDoList={toDoList} onDelete={onDelete} />
-      <TextInput />
+      <TextInput value={toDo} onChange={setToDo} />
+      <Button label="추가" color="#304FFE"/>
     </Container>
   )
 }

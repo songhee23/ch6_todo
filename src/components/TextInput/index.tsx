@@ -5,6 +5,14 @@ const Input = styled.input`
   padding: 8px;
 `;
 
-export const TextInput = () => {
-    return <Input />;
-}
+
+interface Props {
+    readonly value: string;
+    readonly onChange: (text: string) => void;
+  }
+
+export const TextInput = ({value, onChange}: Props) => {
+    return (
+        <Input value={value} onChange={(event) => onChange(event.target.value)}/>
+    );
+};
