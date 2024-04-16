@@ -13,12 +13,21 @@ const Container = styled.div`
   background-color: #eeeeee;
 `;
 
+const ToDoList = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 
 function App() {
   return (
     <Container>
       <Title label="할 일 목록" />
-      <ToDoItem label='리액트 공부하기'/>
+      <ToDoList>
+        <ToDoItem label='리액트 공부하기'/>
+        <ToDoItem label='운동하기'/>
+        <ToDoItem label='책 읽기'/>
+      </ToDoList>
     </Container>
   )
 }
